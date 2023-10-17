@@ -15,9 +15,10 @@ export default {
 
 </script>
 
-<style lang="css" scoped>
+<style  lang="css" scoped>
 .username {
     font-size: 50pt;
     color:#DCAE1D;
 }
+
 </style>

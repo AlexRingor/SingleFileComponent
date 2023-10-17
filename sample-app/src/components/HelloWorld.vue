@@ -1,16 +1,24 @@
 <template>
   <div class="hello">
-    <BigYellowUsername username="alexringor"/>
+    <button @click="showUsername = !showUsername">Toggle Username</button>
+    <div v-if="showUsername">
+      <BigYellowUsername username="alexringor"/>
+    </div>
   </div>
 </template>
 
 <script>
-import BigYellowUsername from './BigYellowUsername.vue'
+import { defineAsyncComponent } from 'vue'
 export default {
   name: 'HelloWorld',
-  components: { BigYellowUsername },
+  components: { BigYellowUsername: defineAsyncComponent(() => import('./BigYellowUsername.vue')) },
   props: {
     msg: String
+  },
+  data () {
+    return {
+      showUsername: { type: Boolean, default: true }
+    }
   }
 }
 </script>
